@@ -32,6 +32,80 @@ Guidelines for scrum:
 
 These guidelines will show your ability to work effectively within a Scrum team and how your Java development expertise contributes to Scrum practices and team goals.
 
+## Overview of Scrum Framework Based on "The Professional Scrum Team"
+
+This book, **The Professional Scrum Team**, is not specifically an introduction to Scrum. It assumes a basic understanding of the framework. However, the introductory chapters and various discussions throughout the book provide a good overview of Scrum's core principles and how they function in a real-world team setting.
+
+* **Scrum for Complex Problems:** Scrum is designed to solve complex problems where a traditional, plan-driven approach would be ineffective. This is because complex problems are unpredictable and require an empirical process of learning and adapting.
+
+* **Scrum Team Structure:** The Scrum Team is a self-organizing and cross-functional unit with three distinct roles: Product Owner, Development Team, and Scrum Master. Each role has specific responsibilities and accountabilities, and no single role holds more authority than the others.
+
+* **Collaboration and Value:**  A key aspect of Scrum is the intense collaboration between the Product Owner and the Development Team. This ensures everyone is aligned towards delivering a valuable product increment.
+
+* **Transparency Through Artifacts:** Scrum relies on transparency to facilitate regular inspection and adaptation. The main artifacts that create this transparency are the Product Backlog, Sprint Backlog, and the product Increment.  These act as a window into the past, present, and future of the product development process. 
+
+* **Product Backlog:** This is a prioritized list of features and requirements for the product, ordered by business value.  The Product Owner is responsible for managing and refining the Product Backlog, ensuring that it reflects the product vision and stakeholder needs.
+
+* **Sprint Backlog:** This details the work the Development Team commits to during a Sprint (a time-boxed iteration, usually 2-4 weeks). It outlines the tasks needed to achieve the Sprint Goal, which is a specific objective set for the Sprint. 
+
+* **Iterative Development and "Done" Increments:** The Development Team works in Sprints to deliver a potentially releasable product increment at the end of each Sprint.  “Done" implies that the increment meets the defined quality standards and is ready for customer use.
+
+* **Continuous Improvement:**  Scrum encourages continuous improvement through regular Sprint Retrospectives, where the team reflects on its process and identifies areas for enhancement.
+
+* **DevOps Integration:** While not explicitly part of Scrum, the principles of DevOps can be integrated to enhance the efficiency and effectiveness of product development.  DevOps practices like continuous integration and deployment enable teams to deliver value more frequently and reliably.
+
+**Important Note:** As mentioned earlier, this book is not a comprehensive guide to Scrum.  If you're new to the framework, the Scrum Guide ([https://scrumguides.org/](https://scrumguides.org/)) or a dedicated Scrum training course would be beneficial for a more detailed understanding. 
+
+## Here are definitions for some common Scrum terms:
+
+●
+Scrum is a framework for developing, delivering, and sustaining complex products.
+ It is designed to solve complex, unpredictable problems through an iterative and incremental approach.
+●
+Sprint is a time-boxed iteration, usually 2–4 weeks, during which the Scrum Team works to deliver a "Done" product increment.
+●
+Scrum Team is a self-organizing, cross-functional team consisting of a Product Owner, a Development Team, and a Scrum Master.
+ The team is responsible for delivering a potentially releasable product increment at the end of each Sprint.
+○
+Development Team builds the product increment.
+ The Development Team should be cross-functional, meaning it has all the competencies needed to deliver a valuable, working product Increment without external dependencies.  Members of the Development Team are called developers, regardless of their specific area of expertise.
+○
+Product Owner is responsible for maximizing the value of the product resulting from the work of the Scrum Team.
+ They define and manage the Product Backlog and collaborate with the Development Team to ensure that the most valuable features are delivered first.
+○
+Scrum Master is responsible for promoting and supporting Scrum as defined in the Scrum Guide.
+ Scrum Masters help the Scrum Team and the organization understand and apply Scrum principles, values, and practices.
+●
+Stakeholder is anyone with an interest in the product, including customers, users, sponsors, and management.
+ They provide feedback on the product increment at the Sprint Review.
+●
+Product Backlog is an ordered list of everything that is known to be needed in the product.
+ It is a dynamic list that evolves throughout the product's lifecycle. Items in the Product Backlog are prioritized based on business value. The Product Owner is responsible for creating, maintaining, and prioritizing the Product Backlog.
+●
+Product Backlog Refinement is the act of adding detail, estimates, and order to items in the Product Backlog.
+  This is an ongoing activity that helps ensure the backlog items are clear, concise, and ready for the Development Team to work on.
+●
+Sprint Backlog is a plan for delivering the product Increment and realizing the Sprint Goal.
+ It includes the list of Product Backlog items selected for the Sprint, as well as the tasks needed to complete them.  The Development Team owns and manages the Sprint Backlog.
+●
+Sprint Goal is the objective for the Sprint. It provides guidance and focus for the Scrum Team during the Sprint.
+●
+"Done" Increment refers to a product increment that meets the defined quality standards and is potentially releasable to customers or users.
+ To be considered done, the increment must meet the team's Definition of Done, which outlines all the criteria that must be met for work to be considered complete.
+●
+Sprint Review is a meeting held at the end of each Sprint where the Scrum Team presents the product Increment to stakeholders and gathers feedback.
+ This feedback is used to inform future development efforts.
+●
+Sprint Retrospective is a meeting held at the end of each Sprint where the Scrum Team reflects on the Sprint and identifies areas for improvement.
+ This is an opportunity for the team to continuously improve its process and performance.
+●
+DevOps is a set of practices that combines software development (Dev) and IT operations (Ops) to shorten the systems development life cycle and provide continuous delivery with high software quality.
+ It is a culture and mindset focused on collaboration, automation, and continuous improvement.
+●
+Velocity is a measure of the amount of work a Development Team can complete in a Sprint.
+ This measurement is often expressed in Story Points, which are a relative unit of size. It is important to note that velocity is not an indicator of performance or productivity, but rather a tool for forecasting and planning.
+Please note that many of these concepts are explained in more detail in the Scrum Guide, which is the definitive guide to the Scrum framework.
+
 
 
 # Git Flow
