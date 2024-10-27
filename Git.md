@@ -1,7 +1,8 @@
 # Scrum
 
 ## Guidelines
-To prepare for Java developer interviews using *The Professional Scrum Team* by Kurt Bittner, you can focus on these key areas:
+
+Guidelines for scrum:
 
 ### 1. **Scrum Framework and Roles**
    - Understand Scrum roles deeply (Product Owner, Scrum Master, Developers).
