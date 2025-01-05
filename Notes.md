@@ -927,3 +927,296 @@ Axon and Lagom => ddd framewords
 ![alt text](image-3.png)
 ![alt text](image-2.png)
 
+
+
+# Prometheus
+
+**Recording rules** in Prometheus are a mechanism for precomputing frequently used or computationally expensive queries and storing the results as new time series. These rules enable you to simplify dashboards and alerting configurations while improving query performance.
+
+---
+
+### **Key Features of Recording Rules**
+1. **Precomputing Results**:
+   - Recording rules evaluate queries at regular intervals and store the result as a new time series.
+   - This reduces the computational overhead of repeatedly evaluating the same query.
+
+2. **Custom Time Series**:
+   - The results of recording rules are stored as new time series with a specified metric name and optional labels.
+
+3. **Improved Performance**:
+   - By storing precomputed results, Prometheus can retrieve them directly during dashboard rendering or alerting, improving response times.
+
+4. **Simplification**:
+   - Complex queries are reduced to simpler metrics, making configurations easier to understand and maintain.
+
+---
+
+### **Use Cases for Recording Rules**
+1. **Dashboard Optimization**:
+   - Store results of expensive or frequently queried metrics to improve dashboard performance.
+
+2. **Alerting**:
+   - Precompute metrics used in alerting rules to reduce latency and computational load.
+
+3. **Derived Metrics**:
+   - Create new metrics by combining or transforming existing metrics.
+
+---
+
+### **How to Define Recording Rules**
+Recording rules are defined in a **Prometheus rules file** (YAML format) and loaded into Prometheus through the configuration.
+
+#### Example: Recording Rule Definition
+```yaml
+groups:
+  - name: example-rules
+    interval: 1m  # Optional: The interval at which rules are evaluated
+    rules:
+      - record: node:cpu_usage:rate
+        expr: rate(node_cpu_seconds_total[5m])
+        labels:
+          environment: production
+```
+
+#### Explanation:
+- **`record`**: Specifies the name of the new time series (`node:cpu_usage:rate`).
+- **`expr`**: The query expression to evaluate (`rate(node_cpu_seconds_total[5m])`).
+- **`labels`**: (Optional) Adds or overrides labels for the new time series (`environment=production`).
+- **`interval`**: (Optional) How often the rule is evaluated (default is the global `scrape_interval`).
+
+---
+
+### **Loading Recording Rules**
+To load recording rules into Prometheus:
+1. Add the rules file to your Prometheus configuration under the `rule_files` section.
+   ```yaml
+   rule_files:
+     - 'rules/*.yml'
+   ```
+2. Restart Prometheus or reload the configuration using the HTTP API (`/-/reload` endpoint).
+
+---
+
+### **Using Recorded Metrics**
+Once defined and evaluated, the results of recording rules can be queried like any other metric in Prometheus. For example:
+```promql
+node:cpu_usage:rate
+```
+
+---
+
+### **Benefits**
+- **Efficiency**: Precomputing reduces query evaluation time during high load.
+- **Scalability**: Simplifies dashboards and alerting systems by avoiding repeated evaluations of complex queries.
+- **Flexibility**: Derived metrics allow you to store meaningful data tailored to your needs.
+
+---
+
+### **Best Practices**
+1. **Avoid Overloading Rules**:
+   - Do not define too many recording rules to prevent increased storage usage and evaluation load.
+
+2. **Use Descriptive Names**:
+   - Use clear and consistent naming for recorded metrics to improve readability and maintainability.
+
+3. **Organize Rule Files**:
+   - Group related rules in separate files for better organization.
+
+4. **Test Expressions**:
+   - Test the query expressions in the Prometheus console before defining them in recording rules.
+
+---
+
+Recording rules are an essential feature for enhancing the efficiency and usability of Prometheus, especially in large-scale monitoring setups.
+
+
+# sonarqube
+
+/home/detafti/.sdkman/candidates/java/21.0.2-oracle/bin/java -Dmaven.multiModuleProjectDirectory=/home/detafti/Projects/vmed -Djansi.passthrough=true -Dmaven.home=/home/detafti/utilities/ideaIC-2024.1.2/idea-IC-241.17011.79/plugins/maven/lib/maven3 -Dclassworlds.conf=/home/detafti/utilities/ideaIC-2024.1.2/idea-IC-241.17011.79/plugins/maven/lib/maven3/bin/m2.conf -Dmaven.ext.class.path=/home/detafti/utilities/ideaIC-2024.1.2/idea-IC-241.17011.79/plugins/maven/lib/maven-event-listener.jar -javaagent:/home/detafti/utilities/ideaIC-2024.1.2/idea-IC-241.17011.79/lib/idea_rt.jar=34961:/home/detafti/utilities/ideaIC-2024.1.2/idea-IC-241.17011.79/bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath /home/detafti/utilities/ideaIC-2024.1.2/idea-IC-241.17011.79/plugins/maven/lib/maven3/boot/plexus-classworlds.license:/home/detafti/utilities/ideaIC-2024.1.2/idea-IC-241.17011.79/plugins/maven/lib/maven3/boot/plexus-classworlds-2.8.0.jar org.codehaus.classworlds.Launcher -Didea.version=2024.3 clean verify -- add token here
+
+
+
+
+# ActiveMQ Artemis
+https://www.javatodev.com/how-to-use-activemq-with-spring-boot-rest-api/
+
+https://docs.spring.io/spring-boot/reference/messaging/jms.html
+
+https://spring.io/guides/gs/messaging-jms
+
+
+
+# CQRS and CDC
+
+https://ibm-cloud-architecture.github.io/refarch-eda
+
+https://ibm-cloud-architecture.github.io/refarch-eda/patterns/cqrs/
+
+https://ibm-cloud-architecture.github.io/refarch-eda/patterns/event-sourcing/
+
+https://debezium.io/blog/2020/02/10/event-sourcing-vs-cdc/
+
+https://martinfowler.com/bliki/CQRS.html
+
+https://developer.ibm.com/learningpaths
+https://developer.ibm.com/learningpaths/develop-kafka-apps/
+https://developer.ibm.com/learningpaths/kubernetes-learning-path/
+
+https://developer.ibm.com/articles/event-streams-kafka-fundamentals/?mhsrc=ibmsearch_a&mhq=kafka#topics-and-partitions4
+
+https://developer.ibm.com/search/?q=kafka
+
+
+# Kafka
+
+using callback or onCompletion to log or handle the exception on the producer side in send() method.
+
+Configuring Producers
+
+client.id
+acks = 0, 1, all => will impact latency, reliability guarantees. it's a tradeoff.
+end-to-end latency is is measured from the time a record was produced until it is available for consumers to read and is identical for all three options. The reason is that, in order to maintain consistency, Kafka will not allow consumers to read records until they are written to all in sync replicas. Therefore, if you care about end-to-end latency, rather than just the producer latency, there is no trade-off to make: you will get the same end-to-end latency if you choose the most reliable option.
+
+Message Delivery Time
+max.block.ms => 
+delivery.timeout.ms => 
+You can configure the delivery timeout to the maximum time you’ll want to wait for a message to be sent, typically a few minutes, and then leave the default number of retries (virtually infinite). With this configuration, the producer will keep retrying for as long as it has time to keep trying (or until it succeeds). This is a much more reasonable way to think about retries.
+
+request.timeout.ms
+
+retries and retry.backoff.ms => Not all errors will be retried by the producer. Some errors are not transient and will not cause retries (e.g., “message too large” error). In general, because the producer handles retries for you, there is no point in handling retries within your own application logic. You will want to focus your efforts on handling nonretriable errors or cases where retry attempts were exhausted.
+
+linger.ms
+linger.ms controls the amount of time to wait for additional messages before send‐
+ing the current batch. KafkaProducer sends a batch of messages either when the cur‐
+rent batch is full or when the linger.ms limit is reached. By default, the producer will
+send messages as soon as there is a sender thread available to send them, even if
+there’s just one message in the batch. By setting linger.ms higher than 0, we instruct
+the producer to wait a few milliseconds to add additional messages to the batch
+before sending it to the brokers. This increases latency a little and significantly
+increases throughput—the overhead per message is much lower, and compression, if
+enabled, is much better.
+
+buffer.memory
+This config sets the amount of memory the producer will use to buffer messages waiting to be sent to brokers.
+If messages are sent by the application faster than they can
+be delivered to the server, the producer may run out of space, and additional send()
+calls will block for max.block.ms and wait for space to free up before throwing an
+exception. Note that unlike most producer exceptions, this timeout is thrown by
+send() and not by the resulting Future.
+
+compression.type
+snappy, gzip, lz4, or zstd
+you reduce network utilization and storage, which is often a bottleneck when sending messages to Kafka
+
+batch.size
+When multiple records are sent to the same partition, the producer will batch them together. This parameter controls the amount of memory in bytes (not messages!) that will be used for each batch. When the batch is full, all the messages in the batch will be sent. However, this does not mean that the producer will wait for the batch to become full. The producer will send half-full batches and even batches with just a single message in them. Therefore, setting the batch size too large will not cause delays in sending messages; it will just use more memory for the batches. Setting the batch size too small will add some overhead because the producer will need to send messages more frequently.
+
+max.in.flight.requests.per.connection
+Apache Kafka preserves the order of messages within a partition.
+This means that if messages are sent from the producer in a specific order, the broker will write them to a partition in that order and all
+consumers will read them in that order. For some use cases, order is very important. There is a big difference between depositing
+$100 in an account and later withdrawing it, and the other way around! However, some use cases are less sensitive.
+Setting the retries parameter to nonzero and the max.in. flight.requests.per.connection to more than 1 means that it is
+possible that the broker will fail to write the first batch of messages, succeed in writing the second (which was already in-flight), and
+then retry the first batch and succeed, thereby reversing the order. Since we want at least two in-flight requests for performance rea‐
+sons, and a high number of retries for reliability reasons, the best solution is to set enable.idempotence=true. This guarantees message ordering with up to five in-flight requests and also guarantees that retries will not introduce duplicates. Chapter 8 discusses the idempotent producer in depth.
+
+max.request.size
+message.max.bytes
+It is usually a good idea to have these configurations match, so the producer will not attempt to send messages of a size that will be rejected by the broker.
+
+receive.buffer.bytes and send.buffer.bytes:
+These are the sizes of the TCP send and receive buffers used by the sockets when writing and reading data. If these are set to –1, the OS defaults will be used. It is a good idea to increase these when producers or consumers communicate with brokers in a different datacenter, because those network links typically have higher latency and lower bandwidth.
+
+enable.idempotence
+exactly once semantics: Exactly once is a fairly large topic, and we’ll dedicate an entire chapter to it, but idempotent producer is a simple and highly beneficial part of it.
+When the idempotent producer is enabled, the producer will attach a sequence number to each record it sends.
+If the broker receives records with the same sequence number, it will reject the sec‐
+ond copy and the producer will receive the harmless DuplicateSequenceException.
+
+Enabling idempotence requires max.in.flight.requests.per.connection to be less than or equal to 5, retries to be greater than 0, and acks=all. If incompatible values are set, a ConfigException will be thrown.
+
+
+
+
+# Scrum
+
+Five ideas to encourage an agile culture: courage, focus, commitment, respect, and openness
+
+Sprint Goal
+Sprint Planning of every Spring
+Team members
+Stakeholders
+product Increment
+refinement meeting
+Product Backlog
+Sprint Backlog
+Features 
+Sprint Review
+Daily Scrum
+User Stories
+Story Points
+Commitment
+Refinement
+Backlog refinement
+Product Backlog item
+Product Backlog refinement
+Sprint Burndown
+releasable product Increment
+Sprint Retrospective
+
+
+scrum teams: self-organizing and cross-functional
+Self-organization will happen only when there is no predefined solution to a problem.
+The litmus test of whether a Scrum Team is truly cross-functional is its ability to deliver a valuable working product Increment every Sprint.
+
+Don’t Separate Business and IT
+us-versus-them mentality
+
+
+
+
+
+podcast:
+teams velocity does not equal success - inflated estimates
+why vision in team
+what intermediate goals
+last responsible moments -> learning windows
+releasable product increment -> mindset behind devops too
+sprint ends with sth tangible - readiness
+you need a cross functional teams to achieve that
+from scatch to a fully working products. you have one team to handle it all. no waiting. faster problem solving, ownership.
+needs mindset shift
+to own their work withougt needing manager. moving a way from directing to leading. not micromanaging
+transparency. open communication.
+constatnly releasable -> fits devops CI/CD
+catchs error way earlier
+being ok with trying new things
+embracing failure. safe env to experiment
+valueable data points
+
+conflict resolution: sharing concerns without worrying
+disagree
+try to things objective, not personal
+finding common ground -> 
+consencus decision making -> every one has a say
+self organizing teams. more engaged more productive
+shift mindset
+big picture, freedom to make decision, responsible
+
+measuring success
+how to use data to get better
+metrics that show the 
+key value areas kvas
+current value: is providing to users right now - customer satisfaction, revenue
+unrealized value: potentiall. finding gaps
+ability to innovate: how well a team adapts to change.
+time to market: speed is key
+
+are you delivering value?
+choose the metrics that really matters
+
+use this data to get better: closed loop system
+sprint retrospective: totally honest with each other, solving problems. env for people to be safe
+continuous improvement
