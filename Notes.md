@@ -1167,18 +1167,28 @@ releasable product Increment
 Sprint Retrospective
 
 
+The professional scrum book:
 scrum teams: self-organizing and cross-functional
 Self-organization will happen only when there is no predefined solution to a problem.
-The litmus test of whether a Scrum Team is truly cross-functional is its ability to deliver a valuable working product Increment every Sprint.
+truly cross-functional is its ability to deliver a valuable working product Increment every Sprint.
 
 Don’t Separate Business and IT
 us-versus-them mentality
 
+transparency:
+The Product Backlog, Sprint Backlog, and Increment
+Hypothesis-Driven Product Backlog: Product Backlog items as hypotheses
+keep bigger Product Backlog items, as beacons
+
+sprint burndown: like sprint backlog
+releasable product Increment: most important artifact
+done: most important idea
+done == releasable
 
 
 
 
-podcast:
+deep dive podcast:
 teams velocity does not equal success - inflated estimates
 why vision in team
 what intermediate goals
@@ -1220,3 +1230,96 @@ choose the metrics that really matters
 use this data to get better: closed loop system
 sprint retrospective: totally honest with each other, solving problems. env for people to be safe
 continuous improvement
+
+
+7 Jan 2025
+deepseek:
+Preparing for an interview as a Java developer, especially in a Scrum-based environment, requires a combination of technical expertise, understanding of Agile principles, and familiarity with Scrum practices. Below is a summary of key guidelines and insights from *The Professional Scrum* book (and related Agile/Scrum resources) that can help you prepare effectively:
+
+---
+
+### **1. Understand Scrum Fundamentals**
+   - **Scrum Framework**: Be familiar with the core components of Scrum:
+     - **Roles**: Scrum Master, Product Owner, Development Team.
+     - **Artifacts**: Product Backlog, Sprint Backlog, Increment.
+     - **Events**: Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective.
+   - **Agile Principles**: Understand the 12 Agile Principles and how they guide Scrum teams (e.g., delivering working software frequently, welcoming changing requirements, etc.).
+
+---
+
+### **2. Demonstrate Technical Expertise in Java**
+   - **Core Java**: Be prepared to answer questions on:
+     - Object-Oriented Programming (OOP) concepts (inheritance, polymorphism, encapsulation, abstraction).
+     - Java Collections Framework (List, Set, Map, etc.).
+     - Exception handling, multithreading, and concurrency.
+   - **Advanced Java**:
+     - Java 8+ features (lambdas, streams, functional interfaces).
+     - Memory management and garbage collection.
+     - Design patterns (e.g., Singleton, Factory, Observer).
+   - **Frameworks and Tools**:
+     - Spring Framework (Spring Boot, Spring MVC, Spring Data, etc.).
+     - Hibernate or other ORM tools.
+     - Build tools like Maven or Gradle.
+     - Testing frameworks (JUnit, Mockito).
+
+---
+
+### **3. Showcase Your Experience with Agile Development**
+   - **Collaboration**: Highlight your ability to work in cross-functional teams and collaborate with Product Owners and Scrum Masters.
+   - **Incremental Delivery**: Explain how you’ve contributed to delivering working software in short iterations (Sprints).
+   - **Adaptability**: Share examples of how you’ve adapted to changing requirements or priorities during a Sprint.
+
+---
+
+### **4. Be Prepared for Behavioral Questions**
+   - **Teamwork**: Describe how you’ve resolved conflicts or improved team dynamics.
+   - **Problem-Solving**: Share examples of how you’ve tackled technical challenges or bugs during a Sprint.
+   - **Continuous Improvement**: Explain how you’ve contributed to Sprint Retrospectives and implemented process improvements.
+
+---
+
+### **5. Understand the Role of a Developer in Scrum**
+   - **Commitment to the Sprint Goal**: Emphasize your focus on delivering value and meeting Sprint commitments.
+   - **Self-Organization**: Demonstrate your ability to take ownership of tasks and work independently within the team.
+   - **Quality Assurance**: Highlight your commitment to writing clean, maintainable code and participating in code reviews.
+
+---
+
+### **6. Prepare for Technical Assessments**
+   - **Coding Challenges**: Practice solving algorithmic problems and writing clean, efficient code.
+   - **System Design**: Be ready to discuss how you would design scalable and maintainable systems.
+   - **Debugging**: Showcase your ability to identify and fix bugs in existing code.
+
+---
+
+### **7. Familiarize Yourself with DevOps Practices**
+   - **CI/CD Pipelines**: Understand how continuous integration and continuous deployment fit into Agile development.
+   - **Version Control**: Be proficient with Git and branching strategies (e.g., GitFlow).
+   - **Monitoring and Logging**: Know how to use tools like ELK Stack, Prometheus, or Grafana for monitoring applications.
+
+---
+
+### **8. Ask Insightful Questions**
+   - **Team Dynamics**: Ask about the team’s Scrum maturity and how they handle challenges like scope creep or missed Sprint goals.
+   - **Technical Stack**: Inquire about the technologies and tools the team uses.
+   - **Growth Opportunities**: Show interest in how the team supports professional development and continuous learning.
+
+---
+
+### **9. Practice Mock Interviews**
+   - Simulate real interview scenarios with a friend or mentor.
+   - Focus on both technical questions and behavioral/Scrum-related discussions.
+
+---
+
+### **10. Key Takeaways from *The Professional Scrum***
+   - **Focus on Value Delivery**: Always align your work with the Sprint Goal and the overall product vision.
+   - **Embrace Transparency**: Be open about progress, challenges, and dependencies.
+   - **Continuous Learning**: Show a willingness to learn and improve, both technically and as a team member.
+
+---
+
+By combining your Java expertise with a solid understanding of Scrum principles and practices, you’ll be well-prepared to excel in your interview. Good luck! Let me know if you need further clarification or additional resources.
+
+
+
